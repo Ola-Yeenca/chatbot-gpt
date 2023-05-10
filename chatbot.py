@@ -1,7 +1,16 @@
 import gradio
 import openai
+from dotenv import load_dotenv
+import os
 
-openai.api_key = "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"
+
+# Load the environment variables
+load_dotenv()
+
+# Get the API key from the environment variables
+api_key = os.getenv("API_KEY")
+openai.api_key = api_key
+
 
 messages = [{"role": "system", "content": "You know everything"}]
 
